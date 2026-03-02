@@ -5,7 +5,8 @@
 apt-get update -y
 apt-get install nginx -y
 
-# Replace the default Nginx page with Holberton School
+# Write to both default HTML files
+echo "Holberton School for the win!" > /var/www/html/index.html
 echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
 
 # Restart nginx without systemctl
