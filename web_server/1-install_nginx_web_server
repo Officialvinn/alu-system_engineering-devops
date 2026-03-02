@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Script that installs and configures Nginx on a new Ubuntu machine
+
+# Install nginx
+apt-get update -y
+apt-get install nginx -y
+
+# Replace the default Nginx page with Holberton School
+echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
+
+# Restart nginx without systemctl
+service nginx restart
