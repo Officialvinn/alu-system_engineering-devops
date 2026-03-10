@@ -6,6 +6,7 @@ apt-get install nginx -y
 
 HOSTNAME=$(hostname)
 
+grep -q "X-Served-By" /etc/nginx/sites-available/default || \
 sed -i "s/server_name _;/server_name _;\n\tadd_header X-Served-By $HOSTNAME;/" /etc/nginx/sites-available/default
 
 service nginx restart
